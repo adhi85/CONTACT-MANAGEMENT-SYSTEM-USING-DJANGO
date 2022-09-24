@@ -1,0 +1,38 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<br>
+
+    <table class="table table-striped table-success table-hover table-bordered" >
+    <thead>
+        <tr>
+            {% for k in headers %}
+            <th style="text-transform: uppercase;">{{k}}</th>
+            {% endfor %}
+        </tr>
+    </thead>
+    <tbody class="table-group-divider">
+        {% if request.user == user %}
+        {% for r in details %}
+            <tr>
+                
+                <td style="text-transform: uppercase; "><a href="{% url 'contact-profile' r.id %}">{{r.fname}}</a></td>
+                <td style="text-transform: uppercase;">{{r.lname}}</td>
+                <td style="text-transform: uppercase;">{{r.gender}}</td>
+                <td style="text-transform: uppercase;">{{r.age}}</td>
+                <td style="text-transform: uppercase;">{{r.address}}</td>
+                <td style="text-transform: uppercase;">{{r.phone}}</td>
+                <td style="text-transform: uppercase;">{{r.religion}}</td>
+                <td style="text-transform: uppercase;">{{r.nation}}</td>
+                
+            </tr>
+        {% endfor %}
+        {% endif %}
+    </tbody>
+  </table>
+
+  <br>
+  <br>
+  <hr>
+   
+{% endblock %}

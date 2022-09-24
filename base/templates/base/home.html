@@ -1,0 +1,63 @@
+{% extends 'main.html' %}
+
+{% block content %}
+    
+    <br>
+    <a style="text-decoration: none; color:inherit; " href="{% url 'add' %}">
+    <div class="row row-cols-1 row-cols-md-2 g-4">
+        <div class="col">
+          <div class="card">
+            <img src="https://blog.zoho.com/wp-content/uploads/2020/07/new-product-icon.png" class="card-img-top" alt="...">
+            <div class="card-body" >
+              <h5 class="card-title">Add</h5>
+              <p class="card-text">Add a new contact</p>
+            </div>
+          </div>
+        </div>
+    </a>
+
+    <a style="text-decoration: none; color:inherit;" href="{% url 'allcontacts' %}">
+        <div class="col">
+          <div class="card">
+            <img src="https://regmedia.co.uk/2022/08/04/shutterstock_delete_trash_button.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Delete</h5>
+              <p class="card-text">Delete any unwanted contacts.</p>
+            </div>
+          </div>
+        </div>
+    </a>
+
+    <a style="text-decoration: none; color:inherit;" href="{% url 'allcontacts' %}">
+        <div class="col">
+          <div class="card">
+            <img src="https://shreeomsteels.com/img/contact-us.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Update</h5>
+              <p class="card-text">Update your contacts</p>
+            </div>
+          </div>
+        </div>
+    </a>
+
+    <a style="text-decoration: none; color:inherit;" href="{% url 'table' %}">
+        <div class="col">
+          <div class="card">
+            <img src="https://global-uploads.webflow.com/5d52bf3e2df046270672ae3b/607058bf746cdae7364cfcf8_12%20customer%20contcat%20channels.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">All Contacts</h5>
+              <p class="card-text">View all contacts</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </a>
+
+    <br>
+    <br>
+    <hr>
+
+
+
+{% endblock %}

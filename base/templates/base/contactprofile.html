@@ -1,0 +1,128 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<section style="background-color: #eee;">
+    <div class="container py-5">
+      <div class="row">
+        <div class="col">
+          <nav aria-label="breadcrumb" class="bg-light rounded-3 p-3 mb-4">
+            <ol class="breadcrumb mb-0">
+              <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+              <li class="breadcrumb-item"><a href="{% url 'table' %}">All users</a></li>
+              <li class="breadcrumb-item active" aria-current="page">User Profile</li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+  
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="card mb-4">
+            <div class="card-body text-center">
+              <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp" alt="avatar"
+                class="rounded-circle img-fluid" style="width: 150px;">
+              <h5 class="my-3" style="text-transform:uppercase ;">{{contact.fname}} {{contact.lname}}</h5>
+            </div>
+          </div>
+          <div class="card mb-4 mb-lg-0">
+            <div class="card-body p-0">
+                <div class="d-flex justify-content-center mb-2">
+              <ul class="list-group list-group-flush rounded-3">
+                <li class="list-group-item d-flex justify-content-between align-items-center p-3">
+                  <i class="fas fa-globe fa-lg text-warning"></i>
+                  
+                    <a href="{% url 'update-contact' contact.id %}"><button type="button" class="btn btn-primary">Update</button></a>
+                    <a href="{% url 'delete-contact' contact.id %}"><button type="button" class="btn btn-outline-primary ms-1">Delete</button></a>
+                  
+                </li>
+              </ul>
+            </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-8">
+          <div class="card mb-4">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-sm-3">
+                  <p class="mb-0">Full Name</p>
+                </div>
+                <div class="col-sm-9">
+                  <p class="text-muted mb-0" style="text-transform:capitalize ;">{{contact.fname}} {{contact.lname}}</p>
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+                <div class="col-sm-3">
+                  <p class="mb-0">Age</p>
+                </div>
+                <div class="col-sm-9">
+                  <p class="text-muted mb-0">{{contact.age}}</p>
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+                <div class="col-sm-3">
+                  <p class="mb-0">Gender</p>
+                </div>
+                <div class="col-sm-9">
+                  <p class="text-muted mb-0">{{contact.gender}}</p>
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+                <div class="col-sm-3">
+                  <p class="mb-0">Phone</p>
+                </div>
+                <div class="col-sm-9">
+                  <p class="text-muted mb-0">{{contact.phone}}</p>
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+                <div class="col-sm-3">
+                  <p class="mb-0">Address</p>
+                </div>
+                <div class="col-sm-9">
+                  <p class="text-muted mb-0" style="text-transform: capitalize ;">{{contact.address}}</p>
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+                <div class="col-sm-3">
+                  <p class="mb-0">Religion</p>
+                </div>
+                <div class="col-sm-9">
+                  <p class="text-muted mb-0" style="text-transform: capitalize ;">{{contact.religion}}</p>
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+                <div class="col-sm-3">
+                  <p class="mb-0">Nationality</p>
+                </div>
+                <div class="col-sm-9">
+                  <p class="text-muted mb-0" style="text-transform: capitalize ;">{{contact.nation}}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+{% endblock %}
+
+<!-- OLD CODE -->
+
+<!-- <h1>NAME: {{contact.fname}} {{contact.lname}}</h1>
+<h1>AGE: {{contact.age}}</h1>
+<h1>GENDER: {{contact.gender}}</h1>
+<h1>PHONE N.O : {{contact.phone}}</h1>
+<hr>
+<a href="{% url 'delete-contact' contact.id %}"><button type="button" >Delete</button></a>
+
+<a href="{% url 'update-contact' contact.id %}"><button type="button" >Update</button></a> -->

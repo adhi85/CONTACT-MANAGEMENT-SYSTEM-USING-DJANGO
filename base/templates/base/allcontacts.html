@@ -1,0 +1,42 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block content%}
+
+<br>
+
+<div class="container bootstrap snippets bootdeys">    
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <div class="row">
+                {% for detail in details %}
+                
+                <div class="col-sm-4 margin40">
+                    <div class="item-img-wrap ">
+                        <a href="{% url 'contact-profile' detail.id %}"> 
+                            <img src="{{detail.photo.url}}" class="img-responsive" alt="workimg"></a>
+                        <div class="item-img-overlay">
+                            <a href="{% url 'contact-profile' detail.id %}">
+                                <span></span>
+                            </a>
+                        </div>
+                    </div> 
+                    <div class="work-desc">
+                        <h3><a style="text-decoration: underline 2px; color: rgb(0, 0, 0); text-transform: uppercase;" href="{% url 'contact-profile' detail.id %}">{{detail.fname}} {{detail.lname}}</a></h3>
+                        <span style="text-decoration:none; " ><b>Phone: {{detail.phone}}.</b></span>
+                    </div><!--work desc-->
+                </div><!--speakers col end-->
+                {% endfor %}
+
+            </div><!--speakers row end-->
+
+        </div>
+    </div>
+    </div>
+    
+ <br>
+  <br>
+  <hr>
+
+
+{% endblock content%}}

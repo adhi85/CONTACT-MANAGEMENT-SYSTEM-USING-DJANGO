@@ -1,0 +1,75 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<center><form action="" method="POST"  enctype="multipart/form-data">
+  <fieldset>
+    {% csrf_token %}
+   <br>
+   <br>
+    <div class="col-12">
+      <label for="inputAddress" class="form-label">First Name</label>
+      {{form.fname}}
+    </div>  
+    
+    <div class="col-12">
+      <label for="inputAddress" class="form-label">Last Name</label>
+      {{form.lname}}
+    </div>
+
+    <div class="col-12">
+      <label for="inputAddress" class="form-label">Gender</label>
+      {{form.gender}}
+    </div>
+
+    <div class="col-12">
+      <label for="inputAddress" class="form-label">Age</label>
+      {{form.age}}
+    </div>
+
+   <div class="col-12">
+    <label for="inputAddress" class="form-label">Address</label>
+    {{form.address}}
+    </div>
+
+    <div class="col-12">
+      <label for="inputAddress" class="form-label">Phone</label>
+      {{form.phone}}
+    </div>
+
+    <div class="col-12">
+      <label for="inputAddress" class="form-label">Religion</label>
+      {{form.religion}}
+    </div>
+
+    <div class="col-12">
+      <label for="inputAddress" class="form-label">Nation</label>
+      {{form.nation}}
+    </div>
+
+<br>
+
+  <center><button class="btn btn-primary"  type="submit">Submit</button></center>
+</fieldset>
+</form>
+
+</center>
+
+<br>
+<br>
+<hr>
+
+
+{% endblock %}
+
+<!-- OLD CODE -->
+<!-- <div >
+    <form action="" method="POST">
+      <fieldset>
+        <legend>Form</legend>
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button  type="submit">Submit</button>
+      </fieldset>
+    </form>
+</div> -->
