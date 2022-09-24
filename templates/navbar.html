@@ -1,0 +1,51 @@
+
+<nav style="background-color: rgb(57, 56, 56) ;" class="navbar" style="background-color: #42505b;">
+  <div class="container-fluid">
+    <a class="text-white display-3" style="text-decoration: none;"  href="{% url 'home' %}">CONTACT MANAGEMENT SYSTEM</a>
+    {% if user.is_authenticated %}
+    <div class="float-right">
+      
+    </div> 
+    <div class="float-right">
+      <span class="navbar-text" style="color: white ;" > <h4>Welcome , <b style="text-transform:capitalize ;">{{user.username}}</b></h4></span>
+      <button type="button" class="btn btn-secondary ">  <span style="text-align:center ;"><a class="navbar-nav me-auto mb-2 mb-lg-0 text-white" style="text-decoration: none;" href="/logout">Logout</a></span></button>
+    </div>
+     
+    
+
+      {% else %}
+      <div class="float-right">
+      <span class="navbar-nav me-auto mb-2 mb-lg-0">
+        <button type="button" class="btn btn-secondary">  <a style="color:rgb(255, 255, 255) ; text-decoration: none;" href="/login">SIGN IN</a></button>
+      </span>
+      </div>
+
+      {% endif %}
+  </div>
+</nav>
+
+
+<!-- OLD CODE -->
+
+<!-- <a href="{% url 'home' %}" >
+    <h1>LOGO</h1>
+
+    {% if user.is_authenticated %}
+        <li>
+        <a  href="/logout">Logout</a>
+      </li>
+      <li>
+        Welcome, {{user.username}}
+      </li>
+
+      {% else %}
+
+      <li >
+        <a href="/login">Login</a>
+      </li>
+
+      {% endif %}
+
+</a>
+
+<hr> -->
